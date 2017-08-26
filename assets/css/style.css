@@ -1,0 +1,54 @@
+body
+{
+	background: url("../images/hollywood.jpg") no-repeat fixed center;				/* Center allows full image to fit virtically */
+	
+
+	/* Allows background image to fit perfectly on Computer screen, Ipad Screen, & Iphone Screen without any white space */
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	color: #b3d9ff;
+
+
+	font-family: "Times New Roman", Times, serif;
+}
+
+.title
+{	
+	margin: 0 auto;
+	color: #004d99;
+
+}
+
+.navbar-default
+{
+	/*background: blue !important;*/
+	opacity: 0.5;
+
+}
+
+
+ button, div, form, input 
+ {
+      margin: 10px;
+ }
+
+.floatLeft
+{
+	float: left;
+}
+
+.back
+{
+	background: #2323db;
+}
+
+.buttonTitle
+{
+	text-align: center;
+	margin-left: 320px;
+	font-weight: bold;
+	text-decoration: underline;
+}
