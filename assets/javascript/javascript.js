@@ -6,6 +6,7 @@
 //Global Array holds intitial actors and we'll add to this array with more actors
 var topics = ["robert de niro", "kurt russell", "val kilmer", "arnold schwarzenegger", "bruce willis", "alec baldwin", "harrison ford", "kiefer sutherland"];
 var actorImage;
+var clean = "";
 
 
 //Function1 Use AJAX to display 10 GIF Images
@@ -27,11 +28,9 @@ function displayMovieInfo()
 		url: queryURL,
 		method: "GET"
 
-
-
 	})
 
-	//Function(Done: is a promise meaning once we get a response it wil promise to return these results)
+	//Function(Done: is a promise meaning once we get a response it will promise to return these results)
 	.done(function(response)
 	{
 
@@ -55,8 +54,10 @@ function displayMovieInfo()
 				gifDiv.addClass("floatLeft");
 
 				//creating a paragraph tag with result items rating
+				//NOTE: we use class="back" to invoke css styling in our style.css file where the rating 
+				//      has a background in order to the text to be visible
 				var p = $("<p>");
-					p.html("<div class='back'> <p> <b> Rating: " + rating + "</b> </p> </div>");
+				p.html("<div class='back'> <p> <b> Rating: " + rating + "</b> </p> </div>");
 
 
 				//create an image tag
@@ -74,6 +75,10 @@ function displayMovieInfo()
 				$("#actor-view").prepend(gifDiv);
 
 
+			}
+			else
+			{
+				
 			}
 
 		}
@@ -118,13 +123,6 @@ function displayMovieInfo()
 
 
 }
-
-
-
-
-
-
-
 
 
 //function2(display initial buttons in topics[] array & any additional buttons)
@@ -174,7 +172,7 @@ $("#add-actor").on("click", function(event)
 //calling the renderButtons() function to display initial buttons
 renderButtons();
 
-//Call the ajax method. Note the reson we do it this way is becasue we use ("actorButton") inside displayActorGif()
+//Call the ajax method. Note the reson we do it this way is becasue we use ("actorButton") inside displayMovieInfo()
 //method which is defined before defining the class("actorButton") or you can place button click method below.
 $(document).on("click", ".actorButton", displayMovieInfo);
 
